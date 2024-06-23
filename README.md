@@ -25,22 +25,25 @@ This project is a simplified version of the Instagram Stories feature built usin
    cd instagram-stories-clone
 
 2. Install dependencies:
+   ```bash
    npm install
 
-3. Start the development server:
+4. Start the development server:
+   ```bash
    npm start
 
-4. Run the test suite:
+6. Run the test suite:
+   ```bash
    npm test
 
 ## Design Choices
--Lazy Loading of Stories: The stories are fetched from an API, and the application only fetches a limited number of stories initially. This reduces the initial load time and improves performance.
--Use of React Hooks: State and effect management using useState, useEffect, and useCallback hooks ensures that the component logic is concise and efficient.
--Debounced Navigation: The automatic advancement to the next story is handled using setTimeout within an useEffect hook, ensuring smooth transitions.
--Optimized Rendering: Only the currently viewed story is rendered in full view, reducing the amount of DOM nodes and improving rendering performance.
+- Lazy Loading of Stories: The stories are fetched from an API, and the application only fetches a limited number of stories initially. This reduces the initial load time and improves performance.
+- Use of React Hooks: State and effect management using useState, useEffect, and useCallback hooks ensures that the component logic is concise and efficient.
+- Debounced Navigation: The automatic advancement to the next story is handled using setTimeout within an useEffect hook, ensuring smooth transitions.
+- Optimized Rendering: Only the currently viewed story is rendered in full view, reducing the amount of DOM nodes and improving rendering performance.
 
 ## Assumptions
 
--API Endpoint: The stories are fetched from https://picsum.photos/v2/list?page=2&limit=10, which returns a list of images. It's assumed that this endpoint is reliable and returns consistent data.
--Story Duration: Each story is displayed for a fixed duration of 5 seconds. This duration is hardcoded for simplicity.
--Single Device Orientation: The application is optimized for mobile devices in portrait mode only.
+- API Endpoint: The stories are fetched from https://picsum.photos/v2/list?page=2&limit=10, which returns a list of images.
+- Story Duration: Each story is displayed for a fixed duration of 5 seconds. This duration is hardcoded for simplicity.
+- Single Device Orientation: The application is optimized for mobile devices in portrait mode only.
