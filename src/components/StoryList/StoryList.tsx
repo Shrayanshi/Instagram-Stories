@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import styled from "styled-components";
-import { useSwipeable } from "react-swipeable";
 import Story from "../Story/Story";
 import useFetchStories from "../../hooks/useFetchStories";
 import "./StoryList.css";
@@ -49,12 +47,6 @@ const StoryList: React.FC = () => {
       return () => clearTimeout(timer);
     }
   }, [currentStoryIndex, stories, nextStory]);
-
-  // Swipe handlers for navigating between stories
-  const handlers = useSwipeable({
-    onSwipedLeft: nextStory,
-    onSwipedRight: previousStory,
-  });
 
   if (loading) return <div>Loading...</div>;
 
